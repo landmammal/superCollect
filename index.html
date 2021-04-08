@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- phaser script -->
+
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.51.0/dist/phaser-arcade-physics.min.js"></script>
+
+    <title>Super Collect</title>
+</head>
+<body>
+    <script>
+        var config = {
+            type: Phaser.AUTO, // decide what type of game to create for the platform you are on
+            width: 800,
+            height: 600,                 
+            scene: {
+                preload: preload,
+                create: create               
+            }
+        };
+
+        var game = new Phaser.Game(config);
+
+
+        function preload(){
+            // assets you wanna add to the game
+            this.load.image('sky', 'assets/sky.png');
+            this.load.image('star', 'assets/star.png');
+        }
+
+        function create(){
+            // assets you wanna show in the game world
+            this.add.image(400, 300, "sky" )
+            this.add.image(400, 200, "star" )
+        }
+    </script>
+</body>
+</html>
